@@ -1,2 +1,0 @@
-# Analise
-ANALISE
