@@ -97,7 +97,7 @@ char *decifraSub(char *txt,int chave) {
 		
 		 int tamanho = strlen(txt);
 		 
-		char *criptografada = (char*)malloc(tamanho+1);
+		char *criptografada = (char*)malloc(tamanho+1); 
 		
 		chave = chave % ALFABETO;
 		
@@ -147,4 +147,6 @@ char *decifraSub(char *txt,int chave) {
 
 	free(mensagemCriptografada);
     free(mensagemDescriptografada);
+    
+    return 0;
 }
