@@ -1,0 +1,23 @@
+
+    while (fgets(linha, sizeof(linha), arquivo) != NULL) {
+    	int i;
+        for (i = 0; linha[i] != '\0'; i++) {
+          
+            if (linha[i] == '/' && linha[i + 1] == '/') {
+                break; 
+            } else if (linha[i] == '/' && linha[i + 1] == '*') {
+                dentro_de_comentario = 1;
+                i++;
+            } else if (linha[i] == '*' && linha[i + 1] == '/') {
+                dentro_de_comentario = 0; 
+                i++;
+            }
+					
+            if (dentro_de_comentario) {
+                continue;
+            }
+Este é um loop que lê cada linha do arquivo e a armazena na variável linha e percorre cada caractere da linha atualmente lida do arquivo.
+Ele verifica se o caractere atual e o próximo formam o início de um comentário de linha "//". 
+Se for verdade, significa que o restante da linha é um comentário, então não precisamos mais processar a linha e podemos passar para a próxima.
+Ele tambem verfifica se estamos dentro de um comentario e quando saimos dele usando o if (dentro_de_comentario) {  continue; } .
+
